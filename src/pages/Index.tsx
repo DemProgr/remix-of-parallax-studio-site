@@ -3,6 +3,7 @@ import { ArrowDown, ArrowRight, ArrowUpRight, Check, Clock3, Dumbbell, Instagram
 import { Button } from "@/components/ui/button";
 import { WorkoutQuiz, INSTAGRAM } from "@/components/WorkoutQuiz";
 import { clubMedia } from "@/data/club-media";
+import { useSharkMotion } from "@/hooks/use-shark-motion";
 import "@/shark.css";
 
 const directions = [
@@ -19,10 +20,11 @@ const faqs = [
 ];
 
 export default function Index() {
+  const motionRef = useSharkMotion();
   const [quizOpen, setQuizOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const openQuiz = () => setQuizOpen(true);
-  return <div className="shark-site min-h-screen bg-background text-foreground">
+  return <div ref={motionRef} className="shark-site min-h-screen bg-background text-foreground">
     <header className="border-b border-border/60 bg-background">
       <div className="shark-container shark-nav flex items-center justify-between gap-6">
         <a href="#" className="shark-logo" aria-label="SHARK fitness club — главная">SHARK<span className="text-primary">.</span><small>FITNESS CLUB</small></a>
