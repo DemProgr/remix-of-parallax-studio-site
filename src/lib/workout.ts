@@ -1,11 +1,10 @@
 export type Audience = "adult" | "child";
-export type Goal = "strength" | "combat" | "judo" | "unsure";
+export type Goal = "strength" | "judo" | "unsure";
 export type Experience = "new" | "returning" | "regular";
 
 export function recommendWorkout(audience: Audience, goal: Goal, experience: Experience) {
   const names: Record<Goal, string> = {
     strength: "Физическая подготовка",
-    combat: "Единоборства",
     judo: "Дзюдо",
     unsure: "Знакомство с тренировками",
   };

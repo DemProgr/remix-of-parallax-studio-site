@@ -1,2 +1,2 @@
 // Verified account imagery is added here only after its provenance is checked.
-export const clubMedia: { hero?: string; strength?: string; combat?: string; judo?: string } = {};
+export const clubMedia: { hero?: string; strength?: string; judo?: string } = {};

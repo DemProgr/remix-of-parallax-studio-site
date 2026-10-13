@@ -9,9 +9,6 @@ describe("workout selection from the brief", () => {
   test("supports choosing for an adult", () => {
     expect(recommendWorkout("adult", "strength", "new").title).toBe("Физическая подготовка");
   });
-  test("maps self-defense to martial arts", () => {
-    expect(recommendWorkout("adult", "combat", "regular").title).toBe("Единоборства");
-  });
   test("maps judo to judo", () => {
     expect(recommendWorkout("adult", "judo", "returning").title).toBe("Дзюдо");
   });

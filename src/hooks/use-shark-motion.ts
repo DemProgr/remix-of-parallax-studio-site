@@ -15,7 +15,7 @@ export function useSharkMotion() {
       if (preference.matches) return;
 
       const reveals = Array.from(root.querySelectorAll<HTMLElement>(
-        ".shark-hero-content > *, #directions > div:first-child, .shark-direction, #start .shark-container > div, #club .shark-container > div, #club > div > div, .shark-faq, #contacts .shark-container > *",
+        ".shark-hero-content > *, #directions > div:first-child, .shark-direction, #start .shark-container > div, #schedule > *, #prices > *, #club .shark-container > div, #club > div > div, .shark-faq, #contacts .shark-container > *",
       ));
       const layers = Array.from(root.querySelectorAll<HTMLElement>(
         ".shark-hero-content, .shark-hero-image, .shark-direction-image, .shark-quiz-number",

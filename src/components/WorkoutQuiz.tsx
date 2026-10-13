@@ -8,7 +8,7 @@ export const INSTAGRAM = "https://www.instagram.com/shark.fitness.club/";
 
 const questions = [
   { title: "Для кого выбираем?", options: [{ value: "adult", label: "Для себя, взрослого", detail: "Время для себя и своих целей" }, { value: "child", label: "Для ребёнка", detail: "Движение, дисциплина и уверенность" }] },
-  { title: "Какая у тебя цель?", options: [{ value: "strength", label: "Физическая форма и сила", detail: "Стать сильнее и выносливее" }, { value: "combat", label: "Единоборства и самооборона", detail: "Техника, характер и уверенность" }, { value: "judo", label: "Дзюдо", detail: "Баланс, контроль и мастерство" }, { value: "unsure", label: "Пока не знаю", detail: "Хочу найти своё направление" }] },
+  { title: "Какая у тебя цель?", options: [{ value: "strength", label: "Физическая форма и сила", detail: "Стать сильнее и выносливее" }, { value: "judo", label: "Дзюдо", detail: "Баланс, контроль и мастерство" }, { value: "unsure", label: "Пока не знаю", detail: "Хочу найти своё направление" }] },
   { title: "Какой у тебя опыт?", options: [{ value: "new", label: "Начинаю с нуля", detail: "Раньше не тренировался" }, { value: "returning", label: "Возвращаюсь после перерыва", detail: "Хочу снова войти в ритм" }, { value: "regular", label: "Тренируюсь регулярно", detail: "Готов двигаться дальше" }] },
 ];
 
