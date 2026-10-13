@@ -1,5 +1,7 @@
 // Transcribed from the club's price and schedule cards (public/price.png, public/schedule.png).
 
+export const INSTAGRAM = "https://www.instagram.com/shark.fitness.club/";
+
 export interface PriceRow {
   label: string;
   value: string;
