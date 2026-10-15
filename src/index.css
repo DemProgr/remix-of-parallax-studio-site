@@ -4,6 +4,14 @@
 
 /* SHARK — athletic editorial. All visual colors are semantic tokens. */
 
+@font-face {
+  font-family: 'MetaPro';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/MetaPro-Bold.woff2') format('woff2'), url('/fonts/MetaPro-Bold.woff') format('woff');
+}
+
 @layer base {
   :root {
     /* Core palette — Instagram-style dark blue */
@@ -118,13 +126,14 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Manrope', system-ui, sans-serif;
+    font-family: 'MetaPro', 'Metropolis', system-ui, sans-serif;
+    font-weight: 700;
     letter-spacing: 0;
   }
 
   /* Typography utilities */
   .font-sans {
-    font-family: 'Manrope', system-ui, sans-serif;
+    font-family: 'MetaPro', 'Metropolis', system-ui, sans-serif;
   }
 
   /* Editorial headline styles */

@@ -15,7 +15,7 @@ export function useSharkMotion() {
       if (preference.matches) return;
 
       const reveals = Array.from(root.querySelectorAll<HTMLElement>(
-        ".shark-hero-content > *, #directions > div:first-child, .shark-direction, #trainers > *, #gallery > *, #schedule > *, #prices > *, #club .shark-container > div, #club > div > div, .shark-faq, #contacts .shark-container > *",
+        ".shark-hero-content > *, #directions > div:first-child, .shark-direction, #trainers > *, #gallery > *, #reviews > *, #schedule > *, #prices > *, #club .shark-container > div, #club > div > div, .shark-faq, #contacts .shark-container > *",
       ));
       const layers = Array.from(root.querySelectorAll<HTMLElement>(
         ".shark-hero-content, .shark-hero-image, .shark-direction-image",
@@ -35,9 +35,22 @@ export function useSharkMotion() {
       }, { threshold: 0.08 });
       reveals.forEach(element => observer.observe(element));
 
+      const header = root.querySelector<HTMLElement>(".shark-site-header");
+      let reference = window.scrollY;
+      let headerHidden = false;
+      const syncHeader = (y: number) => {
+        if (!header) return;
+        const delta = y - reference;
+        if (y < 40) { headerHidden = false; reference = y; }
+        else if (delta > 14) { headerHidden = true; reference = y; }
+        else if (delta < -14) { headerHidden = false; reference = y; }
+        header.classList.toggle("shark-header-hidden", headerHidden);
+      };
+
       let frame = 0;
       const update = () => {
         frame = 0;
+        syncHeader(window.scrollY);
         const mobile = window.innerWidth < 768;
         layers.forEach(element => {
           const anchor = element.closest("section, article");
@@ -70,6 +83,7 @@ export function useSharkMotion() {
         window.removeEventListener("scroll", schedule);
         window.removeEventListener("resize", schedule);
         root.removeEventListener("focusin", focus);
+        header?.classList.remove("shark-header-hidden");
         reveals.forEach(element => {
           element.classList.remove("shark-reveal", "is-revealed");
           element.style.removeProperty("--reveal-delay");
